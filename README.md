@@ -1,2 +1,2 @@
 # acia_test
-Some scripts for exploring a database
+Discutio aux questions supplémentaires
