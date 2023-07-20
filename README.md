@@ -67,3 +67,16 @@ chunk_id: Identifiant du chunk associé au token.
 tokens: Liste de tokens.
 Fonction : Cette table semble être utilisée pour stocker des tokens ou des mots individuels extraits des chunks. Chaque enregistrement est associé à un chunk via l'identifiant "chunk_id" et contient une liste de tokens.
 
+
+Performance
+Efficacité du calcul du score :
+
+Le calcul du score dépend principalement de la longueur du contenu HTML de chaque document et des valeurs minimale et maximale de la longueur du contenu dans la colonne "louis_v004.crawl.html_content". Si la vue "score" est bien indexée et que les statistiques de distribution des longueurs sont disponibles, le calcul du score sera rapide, car il ne nécessite qu'un simple calcul mathématique par ligne.
+Efficacité de la recherche du mot-clé :
+
+La recherche du mot-clé dans la colonne "louis_v004.crawl.html_content" dépend de la façon dont cette colonne est indexée. Si un index de texte complet (full-text index) est utilisé, la recherche sera rapide et efficace, car l'index permettra de rechercher le mot-clé de manière optimisée.
+Si la colonne n'est pas indexée, la recherche du mot-clé peut être plus lente, en particulier si la table contient un grand nombre d'enregistrements. Dans ce cas, une analyse séquentielle de la colonne peut être nécessaire, ce qui peut entraîner des temps d'exécution plus longs.
+
+Optimisation potentielle :
+
+Pour optimiser davantage les performances, on peut envisager de mettre en cache les résultats de la fonction recherche si les données dans la table "louis_v004.crawl" sont relativement stables. Cela évitera des calculs répétés pour les mêmes requêtes.
