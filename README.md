@@ -1,18 +1,6 @@
 # acia_test
 ##Discution aux questions supplémentaires
 Les tables dans le schéma louis_v004 sont :
-
-- ada_002: avec les colonnes id, token_id et embedding- 
-- chunk: avec les colonnes id, crawl_id, title et text_content
-- crawl: avec les colonnes id, url, et title
-- link: avec les colonnes source_crawl, destination_crawl_id
-- query: avec les colonnes id, query, tokens, embedding, encoding et model
-- score: avec les colonnes entity_id, score, escore_type
-- token: avec les colonnes id, chunk_id, tokens et title
-- 
-
-
-
 Table "ada_002":
 
 Colonnes :
